@@ -1,29 +1,41 @@
 <!DOCTYPE html>
+<!-- other page elements -->
+    <head>
+        <meta charset="utf-8">
+        <meta name="robots" content="noindex">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>KDDI Phase 2</title>
+    </head>
+    <body>
+        <div id="create">【通信】その他キャリア_au・UQモバイルへお乗り換えのご相談</div>
+        <div id="【通信】その他キャリア_au・UQモバイルへお乗り換えのご相談">
+          <button type="button1">【通信】その他キャリア_au・UQモバイルへお乗り換えのご相談</button>
+        </div>
+        <script src="coi-serviceworker.js"></script>
+        <script src="https://us01ccistatic.zoom.us/us01cci/web-sdk/video-client.js"></script>
+    <!-- The script source is the video client JS SDK for Contact Center.
+    Get this from the code copied from the flow. -->
+    <script>
+        (() => {
+            const dom = document.getElementById('【通信】その他キャリア_au・UQモバイルへお乗り換えのご相談')
+            dom.addEventListener('click', async () => {
+                const entryId = "_853XXzeTYqutICLFE1_xA" /* Get from the code copied from your flow */
+                const videoClient = new VideoClient({
+                });
+                
+                await videoClient.init({
+                entryId,
+                name: '顧客名', /* optional field, omit if not using, null value not accepted */
+                });
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="robots" content="noindex">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>kddi</title>
-  </head>
-  
-  <body>
-    <div id="【通信】その他キャリア_au・UQモバイルへお乗り換えのご相談">
-        <button type="button1">【通信】その他キャリア_au・UQモバイルへお乗り換えのご相談</button>
-    </div>
-<!--
-    <div id="button2">
-        <button type="button2">ビデオコール Flow #2</button>
-    </div>
-    <div id="button3">
-        <button type="button3">ビデオコール Flow #3</button>
-    </div>
--->
-
-    <script data-apikey="w0xRg0TQSYGT5X8WFWZMgg" data-env="us01" src="https://us01ccistatic.zoom.us/us01cci/web-sdk/zcc-sdk.js"></script>
-<!--    <script data-apikey="w0xRg0TQSYGT5X8WFWZMgg" data-env="us01" src="https://us01ccistatic.zoom.us/us01cci/web-sdk/zcc-sdk.js"></script>
-    <script data-apikey="w0xRg0TQSYGT5X8WFWZMgg" data-env="us01" src="https://us01ccistatic.zoom.us/us01cci/web-sdk/zcc-sdk.js"></script>
--->
-  </body>
-
+                // Juni
+                videoClient.startVideo();
+                videoClient.on('video-end', () => {
+                    console.log('video ended') /* Add any actions to perform when the video ends, for example, print to console log */
+                })
+            })
+        })()
+    </script>
+    </body>
+<!-- other page elements -->
 </html>
